@@ -21,7 +21,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 5vw;
+    font-size: 4vw;
+    font-size: min(max(16px, 4vw), 30px);
 }
 
 .top-bar .welcome-text {
