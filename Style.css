@@ -22,7 +22,7 @@ body {
     align-items: center;
     justify-content: space-between;
     font-size: 4vw;
-    font-size: min(max(16px, 4vw), 30px);
+    font-size: min(max(9px, 4vw), 20px);
 }
 
 .top-bar .welcome-text {
