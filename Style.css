@@ -1,0 +1,79 @@
+/* Basic styling for layout */
+body {
+    font-family: Arial, sans-serif; /* Sets the font style for the entire page */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    text-align: center; /* Centers text content */
+    background-color: #EAFFFB;
+}
+
+/* Top Navigation Bar */
+.top-bar {
+    height: 60px;
+    background-color: #A6D2FF; 
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+.top-bar .welcome-text {
+    font-weight: bold;
+}
+
+.top-bar nav {
+    display: flex;
+    gap: 10px; /* Adds spacing between links */
+}
+
+.top-bar nav a {
+    color: black;
+    text-decoration: none;
+    padding: 0px 12px;
+    transition: background 0.3s;
+}
+
+.top-bar nav a:hover {
+    background-color: #0363C3;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Ensures content is not hidden under the fixed navbar */
+header, main, section, footer {
+    margin-top: 90px !important; /* Adds top margin to avoid overlap with navbar */
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 10px;
+}
+
+/* Styles the logo */
+.logo {
+    max-width: 500px;
+}
+
+/* Layout for sections */
+.sections {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Individual section styling */
+.section {
+    width: 45%;
+}
+
+/* Footer styling */
+footer {
+    background-color: #A6D2FF;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}

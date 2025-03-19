@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation - Slovak Charity</title>
+    <link rel="stylesheet" href="Style.css"> <!-- get style -->
+</head>
+<body>
+    <div id="Navbar"></div> <!-- Navbar -->
+
+    <main>
+        <h2>Make a Donation</h2>
+        <p>Your generous donation will help us continue our mission to support communities in need. Every contribution, no matter how small, makes a significant difference in the lives of those we serve.</p>
+
+        <h3>Donation Form</h3>
+        <form action="submit_donation.php" method="post">
+            <label for="donorName">Your Name:</label>
+            <input type="text" id="donorName" name="donorName" required><br><br>
+
+            <label for="donorEmail">Your Email:</label>
+            <input type="email" id="donorEmail" name="donorEmail" required><br><br>
+
+            <label for="donationAmount">Donation Amount:</label>
+            <input type="number" id="donationAmount" name="donationAmount" min="1" required><br><br>
+
+            <label for="donationMessage">Message (optional):</label><br>
+            <textarea id="donationMessage" name="donationMessage" rows="4"></textarea><br><br>
+
+            <button type="submit">Donate Now</button>
+        </form>
+
+        <h3>Other Ways to Donate</h3>
+        <p>If you prefer other methods to donate, please consider:</p>
+        <ul>
+            <li>Bank Transfer (Contact us for details)</li>
+            <li>Sending a cheque made out to "Slovak Charity"</li>
+            <li>Online Fundraising Events</li>
+        </ul>
+
+        <h3>Thank You for Your Support!</h3>
+        <p>Your donation helps us provide essential support to those in need across Slovakia. We are incredibly grateful for your generosity.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Slovak Charity. All rights reserved.</p>
+    </footer>
+
+    <script defer>
+        fetch('Navbar.html') 
+            .then(response => response.text())
+            .then(data => document.getElementById('Navbar').innerHTML = data)
+            .catch(error => console.error('Link to navbar', error));
+    </script>
+</body>
+</html>

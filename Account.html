@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Slovak Charity</title>
+    <link rel="stylesheet" href="Style.css"> <!-- get style -->
+</head>
+<body>
+    <div id="Navbar"></div> <!-- 導航欄的位置 -->
+
+    <main>
+        <h2>Your Account</h2>
+        <p>Welcome to your account page! Here, you can view and update your personal information.</p>
+
+        <section>
+            <h3>Personal Information</h3>
+            <p><strong>Name:</strong> John Doe</p> <!-- User name -->
+            <p><strong>Email Address:</strong> johndoe@example.com</p> <!-- User email -->
+            
+            <button onclick="document.getElementById('editForm').style.display='block';">Edit Information</button>
+        </section>
+
+        <!-- Edit Information Form (Initially hidden) -->
+        <section id="editForm" style="display:none;">
+            <h3>Edit Personal Information</h3>
+            <form action="update_account.php" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" value="John Doe" required><br><br>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" value="johndoe@example.com" required><br><br>
+
+                <label for="password">New Password (Leave blank to keep current password):</label>
+                <input type="password" id="password" name="password"><br><br>
+
+                <label for="confirmPassword">Confirm New Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword"><br><br>
+
+                <button type="submit">Save Changes</button>
+            </form>
+            <button onclick="document.getElementById('editForm').style.display='none';">Cancel</button>
+        </section>
+
+        <section>
+            <h3>Other Account Settings</h3>
+            <ul>
+                <li><a href="ChangePassword.html">Change Password</a></li>
+                <li><a href="DeleteAccount.html">Delete Account</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Slovak Charity. All rights reserved.</p>
+    </footer>
+
+    <script defer>
+        fetch('Navbar.html') 
+            .then(response => response.text())
+            .then(data => document.getElementById('Navbar').innerHTML = data)
+            .catch(error => console.error('Link to navbar:', error));
+    </script>
+</body>
+</html>
