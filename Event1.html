@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Event - April 15, 2025</title>
+    <link rel="stylesheet" href="Style.css"> <!-- link to CSS -->
+</head>
+<body>
+
+    <!-- get Navbar.html -->
+    <div id="Navbar"></div>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Charity Event - April 15, 2025</h1>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <h2>Event Details</h2>
+        <p><strong>Date:</strong> April 15, 2025</p>
+        <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+        <p><strong>Location:</strong> Manchester Community Center</p>
+        <p><strong>Entry Fee:</strong> Free</p>
+        <p><strong>Details:</strong> Enjoy a day filled with inspiring talks, community activities, and opportunities to support our cause. Meet passionate volunteers and engage in meaningful discussions.</p>
+        
+        <!-- Join Button -->
+        <button id="joinButton">Join the Event</button>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Slovak Charity. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to load Navbar and handle button click -->
+    <script>
+        fetch('Navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('Navbar').innerHTML = data)
+            .catch(error => console.error('Link to navbar:', error));
+        
+        document.getElementById('joinButton').addEventListener('click', function() {
+            alert('Thank you for joining! We look forward to seeing you at the event.');
+        });
+    </script>
+
+</body>
+</html>
