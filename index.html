@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Event</title>
+    <title>Slovak Charity</title>
     <link rel="stylesheet" href="Style.css"> <!-- link to CSS -->
 </head>
 <body>
@@ -11,33 +12,33 @@
     <!-- get Navbar.html -->
     <div id="Navbar"></div>
 
-    <!-- Header Section -->
+    <!-- Header Section with Logo -->
     <header>
-        <h1>Upcoming Charity Events</h1>
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Displays a logo image -->
+        <h1>Slovak Charity</h1> <!-- Main title of the website -->
     </header>
 
     <!-- Main Content Area -->
     <main>
-        <h2>Join Our Charity Events in Manchester</h2>
-        <p>We are excited to host our upcoming charity events in Manchester. These events aim to bring the community together for meaningful activities that support those in need. Join us in making a difference!</p>
+        <h2>Welcome to Our Website</h2>
+        <p>At Slovak Charity, we are dedicated to making a positive impact in the lives of those in need. Our mission is to provide support, resources, and assistance to communities across Slovakia. Whether through local outreach programs, charity events, or volunteer opportunities, we strive to create a brighter future for everyone. Join us in our journey to spread kindness and make a difference.</p>
         
         <div class="sections">
-            <section class="section" onclick="location.href='Event1.html'" style="cursor: pointer;">
-                <h3>Charity Event - April 15, 2025</h3>
-                <p><strong>Location:</strong> Manchester Community Center</p>
-                <p>Enjoy a day filled with inspiring talks, community activities, and opportunities to support our cause. Meet passionate volunteers and engage in meaningful discussions.</p>
+            <section class="section">
+                <h3>Donation</h3>
+                <p>Your donations are vital to our work. Every contribution goes directly towards supporting communities and individuals who need assistance. Your generosity helps us continue our mission to make a lasting impact.</p>
             </section>
-            <section class="section" onclick="location.href='Event2.html'" style="cursor: pointer;">
-                <h3>Charity Event - May 20, 2025</h3>
-                <p><strong>Location:</strong> Manchester Cultural Hall</p>
-                <p>Join us for another special charity gathering where we will host workshops, fundraising activities, and networking sessions to support local initiatives. Refreshments will be provided.</p>
+            <section class="section">
+                <h3>About Us</h3>
+                <p>Slovak Charity is a non-profit organization dedicated to helping communities in Slovakia. Founded with the mission to provide essential support and resources to those in need, we focus on empowering individuals and families to build a better future. Our team is made up of passionate volunteers and dedicated professionals who work tirelessly to create positive change.</p>
+				
             </section>
         </div>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Slovak Charity. All rights reserved.</p>
+        <p>&copy; 2025 Simple Layout. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript to load Navbar -->
@@ -45,7 +46,7 @@
         fetch('Navbar.html')
             .then(response => response.text())
             .then(data => document.getElementById('Navbar').innerHTML = data)
-            .catch(error => console.error('Link to navbar:', error));
+            .catch(error => console.error('Link to navbar:', error)); // error fix
     </script>
 
 </body>
