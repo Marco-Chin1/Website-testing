@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slovak Charity - Event</title>
+    <title>Charity Event</title>
     <link rel="stylesheet" href="Style.css"> <!-- link to CSS -->
 </head>
 <body>
@@ -14,28 +13,24 @@
 
     <!-- Header Section -->
     <header>
-        <h1>Upcoming Charity Event</h1> <!-- Main title of the event page -->
+        <h1>Upcoming Charity Events</h1>
     </header>
 
     <!-- Main Content Area -->
     <main>
-        <h2>Join Us for a Special Event</h2>
-        <p>We are excited to invite you to our upcoming charity event dedicated to supporting communities in need. This is an opportunity to contribute, connect, and make a real difference. Join us and be part of the change!</p>
+        <h2>Join Our Charity Events in Manchester</h2>
+        <p>We are excited to host our upcoming charity events in Manchester. These events aim to bring the community together for meaningful activities that support those in need. Join us in making a difference!</p>
         
         <div class="sections">
-            <section class="section">
-                <h3>Event Details</h3>
-                <p><strong>Date:</strong> April 15, 2025</p>
-                <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
-                <p><strong>Location:</strong> Bratislava Community Center</p>
-                <p>Enjoy a day filled with inspiring talks, community activities, and opportunities to support our cause.</p>
+            <section class="section" onclick="location.href='Event1.html'" style="cursor: pointer;">
+                <h3>Charity Event - April 15, 2025</h3>
+                <p><strong>Location:</strong> Manchester Community Center</p>
+                <p>Enjoy a day filled with inspiring talks, community activities, and opportunities to support our cause. Meet passionate volunteers and engage in meaningful discussions.</p>
             </section>
-            <section class="section">
-                <h3>Another Upcoming Event</h3>
-                <p><strong>Date:</strong> May 20, 2025</p>
-                <p><strong>Time:</strong> 1:00 PM - 6:00 PM</p>
-                <p><strong>Location:</strong> Košice Cultural Hall</p>
-                <p>Join us for another special charity gathering where we will host workshops, fundraising activities, and networking sessions to support local initiatives.</p>
+            <section class="section" onclick="location.href='Event2.html'" style="cursor: pointer;">
+                <h3>Charity Event - May 20, 2025</h3>
+                <p><strong>Location:</strong> Manchester Cultural Hall</p>
+                <p>Join us for another special charity gathering where we will host workshops, fundraising activities, and networking sessions to support local initiatives. Refreshments will be provided.</p>
             </section>
         </div>
     </main>
@@ -50,7 +45,7 @@
         fetch('Navbar.html')
             .then(response => response.text())
             .then(data => document.getElementById('Navbar').innerHTML = data)
-            .catch(error => console.error('Link to navbar:', error)); // error fix
+            .catch(error => console.error('Link to navbar:', error));
     </script>
 
 </body>
