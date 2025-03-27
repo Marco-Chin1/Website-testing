@@ -13,7 +13,7 @@
         <h2>Login to Your Account</h2>
         <p>Welcome back! Please log in to continue.</p>
 
-        <form action="login_process.php" method="post">
+        <form id="loginForm">
             <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" required><br><br>
 
@@ -35,6 +35,21 @@
             .then(response => response.text())
             .then(data => document.getElementById('Navbar').innerHTML = data)
             .catch(error => console.error('Link to navbar:', error));
+
+        // Handle form submission and show a pop-up message
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            // Simulate a login action (since this is not a real login function)
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            // Show the pop-up message
+            alert("Login attempted. (This is a demo and does not perform a real login.)");
+
+            // Clear the form fields after submission
+            document.getElementById("loginForm").reset();
+        });
     </script>
 </body>
 </html>
