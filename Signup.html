@@ -13,7 +13,7 @@
         <h2>Create a New Account</h2>
         <p>Sign up to become a part of Slovak Charity's mission to make a positive difference.</p>
 
-        <form action="signup_process.php" method="post">
+        <form id="signupForm">
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" name="fullName" required><br><br>
 
@@ -36,11 +36,33 @@
         <p>&copy; 2025 Slovak Charity. All rights reserved.</p>
     </footer>
 
+    <!-- Pop-up and overlay -->
+    <div id="overlay" style="display: none;"></div>
+    <div id="popup" style="display: none;">
+        <p>Thank you for signing up! A confirmation email has been sent to you.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
     <script defer>
         fetch('Navbar.html') 
             .then(response => response.text())
             .then(data => document.getElementById('Navbar').innerHTML = data)
             .catch(error => console.error('Link to navbar:', error));
+
+        // Handle form submission
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting (no backend yet)
+
+            // Show the pop-up
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("popup").style.display = "block";
+        });
+
+        // Close the pop-up
+        function closePopup() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("popup").style.display = "none";
+        }
     </script>
 </body>
 </html>
