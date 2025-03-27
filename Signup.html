@@ -1,75 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donation - Slovak Charity</title>
-    <link rel="stylesheet" href="Style.css"> <!-- get style -->
-</head>
-<body>
-    <div id="Navbar"></div> <!-- Navbar -->
-
-    <main>
-        <h2>Make a Donation</h2>
-        <p>Your generous donation will help us continue our mission to support communities in need. Every contribution, no matter how small, makes a significant difference in the lives of those we serve.</p>
-
-        <!-- Warning Label -->
-        <div style="background-color: #FFEB3B; padding: 10px; margin-bottom: 20px; border-radius: 5px; text-align: center; font-weight: bold;">
-            <p><strong>Note:</strong> This is a simulated donation page. No actual transactions will be processed.</p>
-        </div>
-
-        <h3>Donation Form</h3>
-        <form id="donationForm">
-            <label for="donorType">Who are you?</label><br>
-            <select id="donorType" name="donorType" required>
-                <option value="member">Member</option>
-                <option value="volunteer">Volunteer</option>
-                <option value="interested">Person Interested in Slovak Culture</option>
-            </select><br><br>
-
-            <label for="donorName">Your Name:</label>
-            <input type="text" id="donorName" name="donorName" required><br><br>
-
-            <label for="donorEmail">Your Email:</label>
-            <input type="email" id="donorEmail" name="donorEmail" required><br><br>
-
-            <label for="donationAmount">Donation Amount:</label>
-            <input type="number" id="donationAmount" name="donationAmount" min="1" required><br><br>
-
-            <label for="donationMessage">Message (optional):</label><br>
-            <textarea id="donationMessage" name="donationMessage" rows="4"></textarea><br><br>
-
-            <button type="submit">Donate Now</button>
-        </form>
-
-        <h3>Other Ways to Donate</h3>
-        <p>If you prefer other methods to donate, please consider:</p>
-        <ul>
-            <li>Bank Transfer (Contact us for details)</li>
-            <li>Sending a cheque made out to "Slovak Charity"</li>
-            <li>Online Fundraising Events</li>
-        </ul>
-
-        <p>If you have any questions or need more information, please <a href="Contact.html">contact us</a>.</p>
-
-        <p>Your donation helps us provide essential support to those in need across Slovakia. We are incredibly grateful for your generosity.</p>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Slovak Charity. All rights reserved.</p>
-    </footer>
-
-    <script defer>
-        fetch('Navbar.html') 
-            .then(response => response.text())
-            .then(data => document.getElementById('Navbar').innerHTML = data)
-            .catch(error => console.error('Link to navbar', error));
-
-        document.getElementById("donationForm").addEventListener("submit", function(event) {
-            event.preventDefault(); 
-            alert("Thank you for your generosity! Your donation has been recorded.");
-            document.getElementById("donationForm").reset(); 
-        });
-    </script>
-</body>
-</html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Sign Up - Slovak Charity</title>
+     <link rel="stylesheet" href="Style.css"> <!-- get style -->
+ </head>
+ <body>
+     <div id="Navbar"></div> <!-- navbar -->
+ 
+     <main>
+         <h2>Create a New Account</h2>
+         <p>Sign up to become a part of Slovak Charity's mission to make a positive difference.</p>
+ 
+         <form action="signup_process.php" method="post">
+         <form id="signupForm">
+             <label for="fullName">Full Name:</label>
+             <input type="text" id="fullName" name="fullName" required><br><br>
+ 
+             <label for="email">Email Address:</label>
+             <input type="email" id="email" name="email" required><br><br>
+ 
+             <label for="password">Password:</label>
+             <input type="password" id="password" name="password" required><br><br>
+ 
+             <label for="confirmPassword">Confirm Password:</label>
+             <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+ 
+             <button type="submit">Sign Up</button>
+         </form>
+ 
+         <p>Already have an account? <a href="Login.html">Login here</a>.</p>
+     </main>
+ 
+     <footer>
+         <p>&copy; 2025 Slovak Charity. All rights reserved.</p>
+     </footer>
+ 
+     <!-- Pop-up and overlay -->
+     <div id="overlay" style="display: none;"></div>
+     <div id="popup" style="display: none;">
+         <p>Thank you for signing up! A confirmation email has been sent to you.</p>
+         <button onclick="closePopup()">Close</button>
+     </div>
+ 
+     <script defer>
+         fetch('Navbar.html') 
+             .then(response => response.text())
+             .then(data => document.getElementById('Navbar').innerHTML = data)
+             .catch(error => console.error('Link to navbar:', error));
+ 
+         // Handle form submission
+         document.getElementById("signupForm").addEventListener("submit", function(event) {
+             event.preventDefault(); // Prevent form from submitting (no backend yet)
+ 
+             // Show the pop-up
+             document.getElementById("overlay").style.display = "block";
+             document.getElementById("popup").style.display = "block";
+         });
+ 
+         // Close the pop-up
+         function closePopup() {
+             document.getElementById("overlay").style.display = "none";
+             document.getElementById("popup").style.display = "none";
+         }
+     </script>
+ </body>
+ </html>
