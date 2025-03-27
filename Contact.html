@@ -3,60 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Slovak Charity</title>
+    <title>Sign Up - Slovak Charity</title>
     <link rel="stylesheet" href="Style.css"> <!-- get style -->
 </head>
 <body>
-    <div id="Navbar"></div> <!-- Navbar -->
+    <div id="Navbar"></div> <!-- navbar -->
 
     <main>
-        <h2>Contact Us</h2>
-        <p>We would love to hear from you! Whether you have a question, need support, or simply want to get involved, don't hesitate to reach out.</p>
+        <h2>Create a New Account</h2>
+        <p>Sign up to become a part of Slovak Charity's mission to make a positive difference.</p>
 
-        <h3>Get in Touch</h3>
-        <form action="submit_form.php" method="post">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            
-            <label for="email">Your Email:</label>
+        <form id="signupForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required><br><br>
+
+            <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" required><br><br>
-            
-            <label for="message">Your Message:</label><br>
-            <textarea id="message" name="message" rows="5" required></textarea><br><br>
-            
-            <button type="submit">Send Message</button>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+
+            <button type="submit">Sign Up</button>
         </form>
 
-        <h3>Our Location</h3>
-        <p>Visit us at:</p>
-        <p>Slovak Charity<br>123 Charity St.<br>Bratislava, Slovakia</p>
-
-        <h3>Contact Information for The Manchester College</h3>
-        <p>If you're interested in getting in touch with The Manchester College, here are the details:</p>
-        <p><strong>Phone Number:</strong> 03333 222 444 (Local rate)<br>
-        <strong>Email Address:</strong> <a href="mailto:enquiries@tmc.ac.uk">enquiries@tmc.ac.uk</a></p>
-
-        <p><strong>Student Learning Team (SLT):</strong><br>
-        Phone: 0161 674 3496<br>
-        Email: <a href="mailto:SLT@tmc.ac.uk">SLT@tmc.ac.uk</a></p>
-
-        <p><strong>Address:</strong><br>
-        The Manchester College<br>
-        Ashton Old Road<br>
-        Openshaw<br>
-        Manchester<br>
-        M11 2WH</p>
+        <p>Already have an account? <a href="Login.html">Login here</a>.</p>
     </main>
 
     <footer>
         <p>&copy; 2025 Slovak Charity. All rights reserved.</p>
     </footer>
 
+    <!-- Pop-up and overlay -->
+    <div id="overlay" style="display: none;"></div>
+    <div id="popup" style="display: none;">
+        <p>Thank you for signing up! A confirmation email has been sent to you.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
     <script defer>
         fetch('Navbar.html') 
-            .then(response => response.text())
-            .then(data => document.getElementById('Navbar').innerHTML = data)
-            .catch(error => console.error('Link to navbar:', error));
-    </script>
-</body>
-</html>
+            .then(response => response
