@@ -4,14 +4,14 @@ body {
     margin: 0; 
     padding: 0; 
     text-align: center; 
-    background-color: #EAFFFB;
+    background-colour: #EAFFFB;
 }
 
 /* Top Navigation Bar */
 .top-bar {
     height: 60px;
-    background-color: #A6D2FF; 
-    color: black;
+    background-colour: #A6D2FF; 
+    colour: black;
     padding: 10px 0;
     text-align: center;
     position: fixed;
@@ -34,15 +34,15 @@ body {
 }
 
 .top-bar nav a {
-    color: black;
+    colour: black;
     text-decoration: none;
     padding: 0px 12px;
     transition: background 0.3s;
 }
 
 .top-bar nav a:hover {
-    background-color: #0363C3;
-    color: white;
+    background-colour: #0363C3;
+    colour: white;
     border-radius: 5px;
 }
 
@@ -72,8 +72,8 @@ header, main, section, footer {
 
 /* Footer styling */
 footer {
-    background-color: #A6D2FF;
-    color: black;
+    background-colour: #A6D2FF;
+    colour: black;
     text-align: center;
     padding: 10px;
 }
