@@ -36,33 +36,17 @@
         <p>&copy; 2025 Slovak Charity. All rights reserved.</p>
     </footer>
 
-    <!-- Pop-up and overlay -->
-    <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
-    <div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; box-shadow: 0px 0px 10px rgba(0,0,0,0.3); border-radius: 5px;">
-        <p>Thank you for signing up! A confirmation email has been sent to you.</p>
-        <button onclick="closePopup()">Close</button>
-    </div>
-
     <script defer>
         fetch('Navbar.html') 
             .then(response => response.text())
             .then(data => document.getElementById('Navbar').innerHTML = data)
             .catch(error => console.error('Link to navbar:', error));
 
-        // Handle form submission
         document.getElementById("signupForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form from submitting (no backend yet)
-
-            // Show the pop-up
-            document.getElementById("overlay").style.display = "block";
-            document.getElementById("popup").style.display = "block";
+            event.preventDefault(); 
+            alert("Thank you for signing up! A confirmation email has been sent to you.");
+            document.getElementById("signupForm").reset();
         });
-
-        // Close the pop-up
-        function closePopup() {
-            document.getElementById("overlay").style.display = "none";
-            document.getElementById("popup").style.display = "none";
-        }
     </script>
 </body>
 </html>
