@@ -21,7 +21,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 16px;  /* 設置最小16px，最大30px */
+    font-size: 16px;  
 }
 
 .top-bar .welcome-text {
