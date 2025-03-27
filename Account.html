@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Slovak Charity</title>
+    <title>Account - Slovak Charity</title>
     <link rel="stylesheet" href="Style.css"> <!-- get style -->
 </head>
 <body>
     <div id="Navbar"></div> <!-- navbar -->
 
     <main>
-        <h2>Login to Your Account</h2>
-        <p>Welcome back! Please log in to continue.</p>
+        <h2>Your Account</h2>
+        <p>Welcome to your account page!</p>
 
-        <!-- 登錄表單 -->
-        <form id="loginForm">
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required><br><br>
+        <div id="accountDetails">
+            <!-- If no user is logged in, show this message -->
+        </div>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
-
-            <button type="submit">Login</button>
-        </form>
-
-        <p>Don't have an account? <a href="Signup.html">Sign up here</a>.</p>
+        <div id="loginSignupLinks">
+            <!-- Display login/signup links if no user is logged in -->
+            <p>You are not logged in. Please <a href="Login.html">login</a> or <a href="Signup.html">sign up</a>.</p>
+        </div>
     </main>
 
     <footer>
@@ -37,31 +33,24 @@
             .then(data => document.getElementById('Navbar').innerHTML = data)
             .catch(error => console.error('Link to navbar:', error));
 
-        // 檢查用戶是否登入
+        // Check if the user is logged in
         window.onload = function() {
             let user = localStorage.getItem("user");
+            let accountDetails = document.getElementById("accountDetails");
+            let loginSignupLinks = document.getElementById("loginSignupLinks");
+
             if (user) {
-                // 如果用戶已登入，顯示已登入訊息
-                document.querySelector("main").innerHTML = `
-                    <h2>Welcome back, ${user}!</h2>
-                    <p>You are already logged in.</p>
-                    <a href="account.html">Go to your account</a>
+                // If the user is logged in, show their account information
+                accountDetails.innerHTML = `
+                    <h3>Welcome back, ${user}!</h3>
+                    <p>Your account details will be displayed here.</p>
                 `;
+                loginSignupLinks.style.display = 'none';  // Hide login/signup links
+            } else {
+                // If no user is logged in, show login/signup options
+                accountDetails.innerHTML = `<p>You are not logged in.</p>`;
             }
         };
-
-        // 處理表單提交
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // 防止頁面重新加載
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-
-            // 假設用戶成功登入後，將用戶資料存入 localStorage
-            localStorage.setItem("user", email);
-
-            // 跳轉到帳戶頁面
-            window.location.href = "account.html";
-        });
     </script>
 </body>
 </html>
