@@ -60,17 +60,16 @@
     </footer>
 
     <script defer>
-        // 加載 Navbar
+    
         fetch('Navbar.html') 
             .then(response => response.text())
             .then(data => document.getElementById('Navbar').innerHTML = data)
             .catch(error => console.error('Link to navbar', error));
 
-        // 處理表單提交，顯示彈出訊息
         document.getElementById("donationForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // 阻止表單真正提交
+            event.preventDefault(); 
             alert("Thank you for your generosity! Your donation has been recorded.");
-            document.getElementById("donationForm").reset(); // 清空表單欄位
+            document.getElementById("donationForm").reset(); 
         });
     </script>
 </body>
