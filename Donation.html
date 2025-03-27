@@ -13,13 +13,13 @@
         <h2>Make a Donation</h2>
         <p>Your generous donation will help us continue our mission to support communities in need. Every contribution, no matter how small, makes a significant difference in the lives of those we serve.</p>
 
-        <!-- Add a warning label here -->
+        <!-- Warning Label -->
         <div style="background-color: #FFEB3B; padding: 10px; margin-bottom: 20px; border-radius: 5px; text-align: center; font-weight: bold;">
             <p><strong>Note:</strong> This is a simulated donation page. No actual transactions will be processed.</p>
         </div>
 
         <h3>Donation Form</h3>
-        <form action="submit_donation.php" method="post">
+        <form id="donationForm">
             <label for="donorType">Who are you?</label><br>
             <select id="donorType" name="donorType" required>
                 <option value="member">Member</option>
@@ -42,7 +42,6 @@
             <button type="submit">Donate Now</button>
         </form>
 
-
         <h3>Other Ways to Donate</h3>
         <p>If you prefer other methods to donate, please consider:</p>
         <ul>
@@ -61,10 +60,18 @@
     </footer>
 
     <script defer>
+        // 加載 Navbar
         fetch('Navbar.html') 
             .then(response => response.text())
             .then(data => document.getElementById('Navbar').innerHTML = data)
             .catch(error => console.error('Link to navbar', error));
+
+        // 處理表單提交，顯示彈出訊息
+        document.getElementById("donationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 阻止表單真正提交
+            alert("Thank you for your generosity! Your donation has been recorded.");
+            document.getElementById("donationForm").reset(); // 清空表單欄位
+        });
     </script>
 </body>
 </html>
