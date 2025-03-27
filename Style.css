@@ -1,9 +1,9 @@
 /* Basic styling for layout */
 body {
-    font-family: Arial, sans-serif; /* Sets the font style for the entire page */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
-    text-align: center; /* Centers text content */
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
     background-color: #EAFFFB;
 }
 
@@ -30,7 +30,7 @@ body {
 
 .top-bar nav {
     display: flex;
-    gap: 10px; /* Adds spacing between links */
+    gap: 10px; 
 }
 
 .top-bar nav a {
@@ -48,7 +48,7 @@ body {
 
 /* Ensures content is not hidden under the fixed navbar */
 header, main, section, footer {
-    margin-top: 90px !important; /* Adds top margin to avoid overlap with navbar */
+    margin-top: 90px !important;
     padding: 20px;
     border: 1px solid #ddd;
     margin: 10px;
