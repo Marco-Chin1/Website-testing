@@ -3,46 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Slovak Charity</title>
+    <title>Contact Us - Slovak Charity</title>
     <link rel="stylesheet" href="Style.css"> <!-- get style -->
 </head>
 <body>
     <div id="Navbar"></div> <!-- navbar -->
 
     <main>
-        <h2>Create a New Account</h2>
-        <p>Sign up to become a part of Slovak Charity's mission to make a positive difference.</p>
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you! Please fill out the form below to get in touch.</p>
 
-        <form id="signupForm">
-            <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName" name="fullName" required><br><br>
+        <form action="submit_contact.php" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
 
-            <label for="email">Email Address:</label>
+            <label for="email">Your Email:</label>
             <input type="email" id="email" name="email" required><br><br>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
+            <label for="message">Your Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
 
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
-
-            <button type="submit">Sign Up</button>
+            <button type="submit">Submit</button>
         </form>
 
-        <p>Already have an account? <a href="Login.html">Login here</a>.</p>
+        <p>If you prefer to contact us directly, you can reach us at:</p>
+        <p>Email: <a href="mailto:enquiries@tmc.ac.uk">enquiries@tmc.ac.uk</a></p>
+        <p>Phone: <a href="tel:+443333222444">03333 222 444</a></p>
     </main>
 
     <footer>
         <p>&copy; 2025 Slovak Charity. All rights reserved.</p>
     </footer>
 
-    <!-- Pop-up and overlay -->
-    <div id="overlay" style="display: none;"></div>
-    <div id="popup" style="display: none;">
-        <p>Thank you for signing up! A confirmation email has been sent to you.</p>
-        <button onclick="closePopup()">Close</button>
-    </div>
-
     <script defer>
         fetch('Navbar.html') 
-            .then(response => response
+            .then(response => response.text())
+            .then(data => document.getElementById('Navbar').innerHTML = data)
+            .catch(error => console.error('Link to navbar:', error));
+    </script>
+</body>
+</html>
