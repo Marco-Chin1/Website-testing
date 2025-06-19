@@ -61,7 +61,7 @@ header, main, section, footer {
 
 .exit-arrow {
     position: fixed;
-    top: 80px;
+    top: 100px;
     left: 20px;
     font-size: 3vw;
     text-decoration: none;
