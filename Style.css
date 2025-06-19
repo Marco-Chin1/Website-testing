@@ -60,8 +60,10 @@ header, main, section, footer {
 }
 
 .exit-arrow {
-    display: inline-block;
-    font-size: 3vw; /* 箭頭大小，可調整 */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 3vw;
     text-decoration: none;
     color: #0363C3;
     padding: 10px 15px;
@@ -70,6 +72,8 @@ header, main, section, footer {
     transition: background-color 0.3s, color 0.3s;
     cursor: pointer;
     user-select: none;
+    background-color: white;
+    z-index: 1001;
 }
 
 .exit-arrow:hover {
