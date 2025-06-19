@@ -59,6 +59,23 @@ header, main, section, footer {
     max-width: 500px;
 }
 
+.event1 {
+    display: flex;
+    text-align:center;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.event1 .text {
+    flex: 1; /* 文字部份攞一半空間 */
+}
+
+.event1 .image {
+    flex: 1; /* 相片部份攞一半空間 */
+    display: flex;
+    justify-content: center;
+}
+
 /* Layout for sections */
 .sections {
     display: flex;
